@@ -16,7 +16,10 @@ class ScheduleSilentModeUseCase(private val alarmManager: AlarmManager, private 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && !alarmManager.canScheduleExactAlarms()) {
             // Show a message and open settings to request permission
             Toast.makeText(context, "Please enable exact alarms in settings", Toast.LENGTH_LONG).show()
-            context.startActivity(Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM))
+            val intent = Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            context.startActivity(intent)
             return
         }
 
