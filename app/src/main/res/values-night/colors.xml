@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FFFFFF</color>
+    <color name="white">#000000</color>
+    <color name="mainac_background">#05111A</color>
+    <color name="card_background">#1d2329</color>
+    <color name="text_color_small">#8EAFCC</color>
+    <color name="text_color_small_">#B8B8B8</color>
+    <color name="text_color">#FFFFFF</color>
+    <color name="bottom_nav_background">#1d2329</color>
+</resources>

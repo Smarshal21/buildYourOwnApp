@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainac_background"
+    tools:context=".presentation.ui.HomeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="54dp"
+                android:text="Home"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="@color/card_background"
+                    app:cardCornerRadius="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+                        <!-- Bell icon and Title -->
+                        <ImageView
+                            android:id="@+id/ivBellIcon"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_silent"
+                            app:layout_constraintBaseline_toBaselineOf="@id/tvCardTitle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/black" />
+
+                        <TextView
+                            android:id="@+id/tvCardTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Temporary Silent"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/ivBellIcon"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switch_silent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:thumb="@drawable/custom_thumb"
+                            app:layout_constraintBaseline_toBaselineOf="@id/tvCardTitle"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:track="@drawable/custom_track" />
+
+                        <!-- Start Time -->
+                        <TextView
+                            android:id="@+id/tvStartLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Start Time"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvCardTitle" />
+
+                        <EditText
+                            android:id="@+id/etStartTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/border_white_edittext"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:hint="10:00 PM"
+                            android:inputType="none"
+                            android:padding="12dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@android:color/darker_gray"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@id/etEndTime"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvStartLabel" />
+
+                        <!-- End Time -->
+                        <TextView
+                            android:id="@+id/tvEndLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="End Time"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="@id/etEndTime"
+                            app:layout_constraintTop_toBottomOf="@id/tvCardTitle" />
+
+                        <EditText
+                            android:id="@+id/etEndTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/border_white_edittext"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:hint="08:00 AM"
+                            android:inputType="none"
+                            android:padding="12dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@android:color/darker_gray"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/etStartTime"
+                            app:layout_constraintTop_toBottomOf="@id/tvEndLabel" />
+                        <HorizontalScrollView
+                            android:id="@+id/chipScrollViewsilent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:scrollbars="none"
+                            android:fillViewport="true"
+                            app:layout_constraintTop_toBottomOf="@id/etStartTime"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <com.google.android.material.chip.ChipGroup
+                                android:id="@+id/chipGroupsilent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:singleLine="true"
+                                app:chipSpacingHorizontal="2dp"
+                                app:singleSelection="false">
+                                <com.google.android.material.chip.Chip
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Mon"
+                                    android:checkable="true"
+                                    android:textColor="@drawable/bg_chip_text_selector"
+                                    app:chipBackgroundColor="@drawable/bg_chip_color_selector"
+                                    style="@style/RoundChipStyle" />
+                                <com.google.android.material.chip.Chip
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tue"
+                                    android:checkable="true"
+                                    android:textColor="@drawable/bg_chip_text_selector"
+                                    app:chipBackgroundColor="@drawable/bg_chip_color_selector"
+                                    style="@style/RoundChipStyle" />
+                                <com.google.android.material.chip.Chip
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Wed"
+                                    android:checkable="true"
+                                    android:textColor="@drawable/bg_chip_text_selector"
+                                    app:chipBackgroundColor="@drawable/bg_chip_color_selector"
+                                    style="@style/RoundChipStyle" />
+                                <com.google.android.material.chip.Chip
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Thu"
+                                    android:checkable="true"
+                                    android:textColor="@drawable/bg_chip_text_selector"
+                                    app:chipBackgroundColor="@drawable/bg_chip_color_selector"
+                                    style="@style/RoundChipStyle" />
+                                <com.google.android.material.chip.Chip
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Fri"
+                                    android:checkable="true"
+                                    android:textColor="@drawable/bg_chip_text_selector"
+                                    app:chipBackgroundColor="@drawable/bg_chip_color_selector"
+                                    style="@style/RoundChipStyle" />
+                                <com.google.android.material.chip.Chip
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sat"
+                                    android:checkable="true"
+                                    android:textColor="@drawable/bg_chip_text_selector"
+                                    app:chipBackgroundColor="@drawable/bg_chip_color_selector"
+                                    style="@style/RoundChipStyle" />
+                                <com.google.android.material.chip.Chip
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sun"
+                                    android:checkable="true"
+                                    android:textColor="@drawable/bg_chip_text_selector"
+                                    app:chipBackgroundColor="@drawable/bg_chip_color_selector"
+                                    style="@style/RoundChipStyle" />
+                            </com.google.android.material.chip.ChipGroup>
+                        </HorizontalScrollView>
+                        <!-- Enable Override Button -->
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_enable_override"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:background="@drawable/bg_blue_button"
+                            android:paddingVertical="12dp"
+                            android:text="Enable Override"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/chipScrollViewsilent" />
+
+                        <TextView
+                            android:id="@+id/tvOfficeModeInfos"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="Set the start and end time to automatically enable silent mode during this period, which will turn off afterward."
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btn_enable_override" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/bg_linear_layout_guide"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent">
+
+                    <!-- Features Section -->
+                    <TextView
+                        android:id="@+id/keyFeaturesTexts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="How Does Profiles Work ?"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <androidx.cardview.widget.CardView
+                        style="?attr/cardViewStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="-20dp"
+                        app:cardBackgroundColor="@color/mainac_background"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="10dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="12dp"
+                                android:autoSizeMaxTextSize="16sp"
+                                android:autoSizeMinTextSize="12sp"
+                                android:autoSizeStepGranularity="1sp"
+                                android:autoSizeTextType="uniform"
+                                android:background="@drawable/bg_rectangle_tv"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:padding="5dp"
+                                android:text="Family"
+                                android:textColor="@android:color/holo_blue_light"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="Calls from Family contacts will ring only outside of work hours"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="?attr/cardViewStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="-20dp"
+                        app:cardBackgroundColor="@color/mainac_background"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="10dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="12dp"
+                                android:autoSizeMaxTextSize="16sp"
+                                android:autoSizeMinTextSize="12sp"
+                                android:autoSizeStepGranularity="1sp"
+                                android:autoSizeTextType="uniform"
+                                android:background="@drawable/bg_rectangle_tv"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:padding="5dp"
+                                android:text="Work"
+                                android:textColor="@android:color/holo_blue_light"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="Calls from Work contacts will ring only during work hours."
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="?attr/cardViewStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="-20dp"
+                        app:cardBackgroundColor="@color/mainac_background"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="10dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="12dp"
+                                android:autoSizeMaxTextSize="16sp"
+                                android:autoSizeMinTextSize="12sp"
+                                android:autoSizeStepGranularity="1sp"
+                                android:autoSizeTextType="uniform"
+                                android:background="@drawable/bg_rectangle_tv"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:padding="5dp"
+                                android:text="VIP"
+                                android:textColor="@android:color/holo_blue_light"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="Calls from VIP contacts will always ring, regardless of time."
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

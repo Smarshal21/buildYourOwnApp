@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CircleImageViewStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="RoundedImageStyle">
+        <item name="cornerSize">12dp</item> <!-- Adjust the radius -->
+    </style>
+
+    <style name="RoundChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+    </style>
+
+</resources>
