@@ -1,3 +1,6 @@
+# Missing Deliverables
+- A working APK file - Mandatory ✅: A compiled APK we can install and test.
+
 # ZenMode  
 
 ## About the App  
